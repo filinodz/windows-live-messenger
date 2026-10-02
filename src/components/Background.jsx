@@ -1,9 +1,16 @@
 import React from 'react';
 import bg from '/assets/background/background.jpg';
-import colorSchemes from '../imports/colorSchemes';
+
+const schemeColors = {
+  sky: '#8bcde8', twilight: '#7882b7', sea: '#57b6ae', lime: '#a6ce39', sun: '#f3c74f',
+  pumpkin: '#ed8b2c', ruby: '#c44955', fuchsia: '#d65ca9', blush: '#e99aaa', violet: '#9b72c2',
+  slate: '#78909c', smoke: '#9aa0a6', match_my_scene_color: '#d8edf8',
+};
 
 const Background = ({ children }) => {
-  const colorScheme = localStorage.getItem('colorScheme');
+  const storedScheme = localStorage.getItem('colorScheme');
+  const schemeName = Object.keys(schemeColors).find((name) => storedScheme?.includes(name));
+  const colorScheme = storedScheme?.startsWith('#') ? storedScheme : schemeColors[schemeName] || '#d8edf8';
 
   const hexToRgba = (hex, alpha) => {
     const r = parseInt(hex.slice(1, 3), 16);

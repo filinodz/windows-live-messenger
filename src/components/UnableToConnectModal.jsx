@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import '7.css/dist/7.scoped.css';
 import WLMIcon from '/assets/general/wlm-icon.png';
 import info from '/assets/general/info.png';
@@ -27,14 +27,14 @@ const UnableToConnectModal = ({ setShowUnableToConnectModal, errorMessage }) => 
             </div>
 
             {/*body*/}
-            <div className="mx-4 mb-6 flex w-[490px] mt-2">
+            <div className="error-dialog-body mx-4 mb-6 flex w-[490px] mt-2">
               <div className="flex items-center">
                 <div>
                   <img src={info} alt="" />
                 </div>
               </div>
               <div className="ml-3">
-                <p className="mt-2 text-[19px] text-[#1D2F7F]">We can't sign you in to Windows Live Messenger</p>
+                <p className="mt-2 text-[19px] text-[#1D2F7F]">Impossible de vous connecter à Windows Live Messenger</p>
                 <p className="text-[12px]">{errorMessage}</p>
               </div>
             </div>
@@ -42,7 +42,7 @@ const UnableToConnectModal = ({ setShowUnableToConnectModal, errorMessage }) => 
             {/*footer*/}
             <div className="flex items-center justify-end rounded-b win7 p-3 gap-1.5">
               <button type="button" onClick={() => setShowUnableToConnectModal(false)}>
-                Continue
+                Continuer
               </button>
             </div>
           </div>

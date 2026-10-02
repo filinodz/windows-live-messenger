@@ -5,8 +5,8 @@ const WhatsNew = () => {
   const [content, setContent] = useState(0);
   const [fadeClass, setFadeClass] = useState('fade-in');
   const messages = [
-    "Find the github repository of this MSN clone <a target='_blank' href='https://github.com/garcia-clara/windows-live-messenger-clone' class='link'>here</a>!",
-    "The site is under construction, so don't be surprised to find bugs or missing features",
+    'Retrouvez votre nostalgie avec MATA Abderezak',
+    'Messenger est de retour',
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const WhatsNew = () => {
         <img src={divider} alt="" className="mix-blend-multiply" />
       </div>
       <div className="flex gap-1 pt-2 items-center">
-        <p className="text-[16px] text-[#1D2F7F]">What's new</p>
+        <p className="text-[16px] text-[#1D2F7F]">Quoi de neuf ?</p>
         <div className="ml-3 whats-new-arrow-previous" onClick={handlePrevious}></div>
         <div className="whats-new-arrow-next" onClick={handleNext}></div>
         <div className="ml-2 whats-new-settings"></div>

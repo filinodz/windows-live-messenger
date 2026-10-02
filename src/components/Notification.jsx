@@ -26,7 +26,7 @@ const Notification = ({ message, onClose }) => {
   useEffect(() => {
     const audio = new Audio(online);
     audio.play().catch((error) => {
-      console.error('Failed to play sound:', error);
+      console.error('Impossible de lire le son :', error);
     });
   }, []);
 

@@ -6,34 +6,28 @@
   background-color: transparent;
   border: 2px solid transparent;
 }
+
 .aerobutton:hover {
   border-image: url('/assets/general/aerobutton_border.png') 2 round;
   background-size: 100% 100%;
 }
+
 .aerobutton:active {
   border-image: url('/assets/general/aerobutton_border_down.png') 2 round;
 }
 
-.divider {
-  box-shadow: 0 3px 4px black;
-}
-
-.white-light {
-  text-shadow: 0 1px 3px white;
-}
+.divider { box-shadow: 0 3px 4px black; }
+.white-light { text-shadow: 0 1px 3px white; }
 
 .searchbar {
-  background-image: url('.//assets/general/magnifying-glass.png'); /* URL de votre icône SVG locale */
-  background-size: 12px 12px; /* Taille de l'icône */
+  background-image: url('/assets/general/magnifying-glass.png');
+  background-size: 12px 12px;
   background-repeat: no-repeat;
-  background-position: right 10px center; /* Position de l'icône */
-  box-shadow: inset 0px 7px 6px -7px rgba(0, 0, 0, 0.1);
+  background-position: right 10px center;
+  box-shadow: inset 0 7px 6px -7px rgba(0, 0, 0, 0.1);
 }
 
-.searchbar:hover {
-  border: 1px solid #179bf3;
-}
-
+.searchbar:hover,
 .searchbar:focus {
   border: 1px solid #179bf3;
   outline: none;
@@ -43,62 +37,51 @@
   cursor: pointer;
   border: 1px solid #80d2f1;
   border-radius: 3px;
-  background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(200, 234, 249, 1) 70%, rgb(198, 237, 255) 97%);
 }
 
-.fade-in {
-  opacity: 1;
-  transition: opacity 1s ease-in;
+/* Les lignes restent des boutons accessibles, mais conservent exactement
+   l'apparence des lignes du clone original. */
+.contact-category-header,
+.contact-row,
+.picker-trigger {
+  appearance: none;
+  color: inherit;
+  font: inherit;
 }
 
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
+.contact-category-header,
+.contact-row {
+  background: transparent;
+  box-shadow: none;
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
+
+.fade-in { opacity: 1; transition: opacity 1s ease-in; }
+.fade-out { opacity: 0; transition: opacity 0.5s ease-out; }
 
 @keyframes nudge {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 .nudge {
-  animation: nudge 0.5s; /* Duration of the animation */
-  animation-iteration-count: 1; /* Number of iterations of the animation */
-  overflow: hidden; /* Hide scrollbars */
-  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer, Edge */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  animation: nudge 0.5s;
+  animation-iteration-count: 1;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
@@ -107,20 +90,9 @@ body {
   scrollbar-width: none;
 }
 
-.link {
-  color: #1232c2;
-}
-
-.link:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.usertiles-shadow {
-  box-shadow: 3px 2px 4px 0px rgba(0, 0, 0, 0.35);
-}
-
-/* -----------------WHATS NEW COMPONENT CSS----------------- */
+.link { color: #1232c2; }
+.link:hover { cursor: pointer; text-decoration: underline; }
+.usertiles-shadow { box-shadow: 3px 2px 4px 0 rgba(0, 0, 0, 0.35); }
 
 .whats-new-arrow-previous {
   height: 17px;
@@ -128,57 +100,144 @@ body {
   background-image: url('/assets/general/whats_new_arrow_previous.png');
   cursor: pointer;
 }
-
-.whats-new-arrow-previous:active {
-  background-image: url('/assets/general/whats_new_arrow_previous_active.png');
-}
-
-.whats-new-arrow-previous:hover {
-  background-image: url('/assets/general/whats_new_arrow_previous_hover.png');
-}
-
+.whats-new-arrow-previous:active { background-image: url('/assets/general/whats_new_arrow_previous_active.png'); }
+.whats-new-arrow-previous:hover { background-image: url('/assets/general/whats_new_arrow_previous_hover.png'); }
 .whats-new-arrow-next {
   height: 17px;
   width: 17px;
   background-image: url('/assets/general/whats_new_arrow_next.png');
   cursor: pointer;
 }
-
-.whats-new-arrow-next:active {
-  background-image: url('/assets/general/whats_new_arrow_next_active.png');
-}
-
-.whats-new-arrow-next:hover {
-  background-image: url('/assets/general/whats_new_arrow_next_hover.png');
-}
-
+.whats-new-arrow-next:active { background-image: url('/assets/general/whats_new_arrow_next_active.png'); }
+.whats-new-arrow-next:hover { background-image: url('/assets/general/whats_new_arrow_next_hover.png'); }
 .whats-new-settings {
   height: 10px;
   width: 10px;
   background-image: url('/assets/general/whats_new_settings.png');
   cursor: pointer;
 }
+.whats-new-settings:hover { background-image: url('/assets/general/whats_new_settings_hover.png'); }
 
-.whats-new-settings:hover {
-  background-image: url('/assets/general/whats_new_settings_hover.png');
-}
-
-/* -----------------WHATS NEW COMPONENT CSS----------------- */
-
-.hoverscene {
-  border: transparent 1px solid;
-}
-
-.hoverscene:hover {
+.hoverscene { border: 1px solid transparent; }
+.hoverscene:hover,
+.selectedscene {
   border: 1px solid #b9d7fc;
   border-radius: 3px;
-  background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(200, 234, 249, 1) 70%, rgb(198, 237, 255) 97%);
 }
+.selectedscene { border-color: #84acdd; }
 
-.selectedscene {
-  border: 1px solid #84acdd;
-  border-radius: 3px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(200, 234, 249, 1) 70%, rgb(198, 237, 255) 97%);
+/* Commandes de fenêtre inspirées de Windows Live Messenger sous XP/Vista. */
+.wlm-chat-desktop {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #dceef8;
+}
+
+.wlm-chat-frame {
+  width: 100%;
+}
+
+.wlm-chat-frame.wlm-chat-windowed {
+  width: min(760px, calc(100vw - 40px));
+  height: min(620px, calc(100vh - 40px));
+  margin: 20px auto;
+  overflow: hidden;
+  border: 1px solid #537f9d;
+  border-radius: 5px 5px 2px 2px;
+  box-shadow: 0 8px 28px rgba(26, 66, 92, 0.45);
+}
+
+.wlm-chat-frame.wlm-chat-windowed > div,
+.wlm-chat-frame.wlm-chat-windowed .relative.h-full {
+  height: 100%;
+}
+
+.wlm-chat-titlebar {
+  border-bottom: 1px solid #7199b0;
+  background: linear-gradient(180deg, #eaf7fd 0%, #c7e4f3 48%, #9bc8df 52%, #d7eef8 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+  color: #173748;
+  font-size: 12px;
+}
+
+.wlm-caption-controls {
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+  flex: 0 0 auto;
+}
+
+.wlm-caption-controls button {
+  appearance: none;
+  width: 27px;
+  height: 20px;
+  min-width: 0;
+  padding: 0 0 2px;
+  border: 1px solid #7898ab;
+  border-top: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, #f9fdff 0%, #d9ebf5 48%, #b9d8ea 52%, #ddecf4 100%);
+  color: #183746;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 13px;
+  line-height: 17px;
+  text-shadow: 0 1px white;
+  box-shadow: inset 1px 0 rgba(255,255,255,.7);
+}
+
+.wlm-caption-controls button:hover {
+  background: linear-gradient(180deg, #fff 0%, #d8f2ff 45%, #79c9ed 55%, #c5efff 100%);
+  border-color: #367fa4;
+}
+
+.wlm-caption-controls .wlm-close-button {
+  width: 40px;
+  border-color: #99554d;
+  border-radius: 0 0 0 4px;
+  color: white;
+  font-size: 16px;
+  text-shadow: 0 1px #6e1c15;
+  background: linear-gradient(180deg, #efb0a6 0%, #d9695b 48%, #b94235 52%, #e47a6e 100%);
+}
+
+.wlm-caption-controls .wlm-close-button:hover {
+  background: linear-gradient(180deg, #ffc7be 0%, #f16e5d 45%, #c82719 55%, #f08d7e 100%);
+}
+
+.wlm-chat-actions {
+  height: 31px;
+  padding-left: 3px;
+  gap: 1px;
+}
+
+.wlm-chat-action {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 1px 9px;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px #286f99;
+}
+
+.wlm-safety-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  max-width: 520px;
+  margin: 2px 0 12px 2px;
+  color: #565656;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.wlm-safety-notice img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+@media (max-width: 850px) {
+  .wlm-chat-action { padding-left: 4px; padding-right: 4px; }
 }

@@ -57,10 +57,10 @@ const EmoticonSelector = () => {
       <div className="relative" ref={dropdownRef}>
         <div className="flex items-center aerobutton p-1 h-6" onClick={() => setIsOpen(!isOpen)}>
           <div className="w-5">
-            <img src={selectEmoticon} alt="Select Emoticon" />
+            <img src={selectEmoticon} alt="Choisir une émoticône" />
           </div>
           <div>
-            <img src={arrow} alt="Dropdown Arrow" />
+            <img src={arrow} alt="Ouvrir le menu" />
           </div>
         </div>
 
@@ -68,11 +68,11 @@ const EmoticonSelector = () => {
         {isOpen && (
           <div className="absolute w-[384px] h-auto bottom-[19px] left-[-9px] m-2 bg-white border border-gray-300 p-1">
             <div className="w-full border-b pb-1 flex justify-between">
-              <p className="font-bold">Your emoticons</p>
-              <p className="link">Show all...</p>
+              <p className="font-bold">Vos émoticônes</p>
+              <p className="link">Tout afficher...</p>
             </div>
             <div>
-              <p className="my-1 opacity-75">Recently used emoticons</p>
+              <p className="my-1 opacity-75">Émoticônes récemment utilisées</p>
               <div className="w-full border-b flex justify-center gap-1.5 pb-0.5">
                 {displayRecentEmoticons.map((alias, index) => (
                   <div
@@ -84,7 +84,7 @@ const EmoticonSelector = () => {
                   </div>
                 ))}
               </div>
-              <p className="my-1 opacity-75">Pinned emoticons</p>
+              <p className="my-1 opacity-75">Émoticônes favorites</p>
             </div>
             <div className="flex flex-wrap gap-1 mb-2">
               {Array.from(uniqueEmoticonMap.entries()).map(([src, alias]) => (

@@ -1,0 +1,20 @@
+WINDOWS LIVE MESSENGER - DEPLOIEMENT CPANEL
+==========================================
+
+1. Ouvrez le gestionnaire de fichiers cPanel ou votre logiciel FTP.
+2. Ouvrez précisément le dossier /public_html/wlm de votre domaine.
+3. Envoyez TOUT LE CONTENU de ce dossier dist, y compris le fichier .htaccess.
+4. Dans Supabase > Authentication > URL Configuration :
+   - indiquez https://mataa.me/wlm/ comme Site URL ;
+   - ajoutez https://mataa.me/wlm/** dans Redirect URLs.
+5. Vérifiez que le certificat SSL du domaine est actif.
+
+Cette application utilise Supabase comme backend sécurisé et temps réel.
+PHP et MySQL cPanel ne sont donc pas nécessaires. L’hébergement cPanel sert
+les fichiers HTML, CSS et JavaScript, tandis que Supabase gère les comptes,
+les contacts et les messages.
+
+IMPORTANT :
+- envoyez le contenu de dist, pas le dossier du code source ;
+- conservez .htaccess, sinon les liens /wlm/chat/... renverront une erreur 404 ;
+- ne placez jamais une clé Supabase service_role dans l’application.

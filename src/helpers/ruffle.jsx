@@ -72,4 +72,6 @@ const Ruffle = forwardRef((_, ref) => {
   );
 });
 
+Ruffle.displayName = 'Ruffle';
+
 export default Ruffle;

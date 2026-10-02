@@ -1,64 +1,62 @@
-<img src="https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/wlm_protocol.png" alt="Windows Live Messenger Logo" width="100" height="100">
+# Windows Live Messenger — édition nostalgie française
 
-# [Windows Live Messenger](https://wlm.vercel.app/)
+Une reconstitution web de Windows Live Messenger, entièrement francisée et équipée d’un vrai mode en ligne : comptes, contacts, invitations, présence, conversations, émoticônes, clins d’œil et wizz.
 
-🌐 **Try it here**: [WLM](https://wlm.vercel.app)
+> Fork de [clrgia/windows-live-messenger](https://github.com/clrgia/windows-live-messenger). Cette version remplace la connexion Discord par une authentification propre (e-mail + mot de passe) adossée à une API Laravel/MySQL, et retravaille l’interface.
 
----
+## Ce qui change par rapport au projet d’origine
 
-## About
+- **Authentification maison** : inscription et connexion par e-mail et mot de passe (hachage bcrypt côté serveur, token bearer). La connexion Discord (`discordAuth.js`, `auth.js`) est retirée.
+- **Backend Laravel/MySQL** fourni dans [`backend/laravel`](backend/laravel) : profils, contacts, invitations, messages et wizz.
+- **Vrais contacts** : ajout par adresse e-mail (`AddContactModal`), invitations à accepter ou refuser (`Invitations`), présence en ligne automatique.
+- **Interface retravaillée** : page de connexion, liste de contacts, fenêtre de conversation, options et changement d’image/scène revus ; textes en français.
+- **Déploiement dans un sous-dossier** (`/wlm/`) avec `.htaccess` pour Apache/cPanel.
 
-**MSN Messenger**, later rebranded as **Windows Live Messenger**, was a cross-platform instant messaging client developed by Microsoft. It was first released in 1999 and discontinued in 2013.
+## Architecture
 
-This project aims to visually recreate the beloved application of our childhood. It was built as a learning experience and as a tribute to nostalgic users like me. I had so much fun coding it, researching, and recovering original assets to make it as authentic as possible.
+```
+Front React (Vite)  ──fetch──▶  API Laravel  /api/wlm/*  ──▶  MySQL
+src/lib/api.js                  backend/laravel/
+```
 
-I hope you enjoy it as much as I did creating it! 😊
+`src/lib/supabase.js` est un petit adaptateur qui expose l’ancienne surface « Supabase » utilisée par les pages, mais qui appelle en réalité l’API Laravel. Le fichier `supabase/schema.sql` est conservé pour référence si vous préférez revenir à Supabase.
 
-The initial idea was to add "fake" contacts (AI bots) to replicate the MSN experience. For now, I don’t have the time or motivation to develop a real chat application—but who knows, maybe in the future!
+## Lancer le projet
 
-As a junior developer, I kindly ask for your understanding if the application has bugs or missing features. I’m aware it’s not perfect, and I do my best to fix issues as they come up.
+1. Installez le backend dans un projet Laravel (voir [`backend/laravel/README.md`](backend/laravel/README.md)).
+2. Indiquez l’URL de l’API dans `index.html` :
 
----
+   ```html
+   <script>window.__WLM_API = '/api/wlm';</script>
+   ```
 
-## How to Use
+   En développement, si l’API tourne sur un autre port, ajoutez un proxy `server.proxy` dans `vite.config.js` ou activez CORS côté Laravel.
 
-To log in, simply enter a random email and password or use Discord authentication. Please note that all data will be lost when you log out.
+3. Démarrez le front :
 
----
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-## Available Features
+## Déployer
 
-- **Discord Authentication**.
-- **Profile customization**: Change your profile picture, display name, and personal message.
-- **Status updates**: Set your availability (online, busy, away).
-- **Scene customization**: Personalize the application background.
-- **Chat with contacts**.
-- **Send emoticons**.
-- **Send wizz (nudge)**: Relive the iconic MSN feature!
-- **Winks**: Add animations to your interactions.
+Le build est configuré pour être servi sous `/wlm/` (`base` dans `vite.config.js`, `RewriteBase` dans `public/.htaccess`). Adaptez ces deux valeurs si vous déployez ailleurs.
 
----
+```bash
+npm run build
+```
 
-## Planned Features
+Envoyez ensuite tout le contenu de `dist/` (y compris le fichier caché `.htaccess`) dans le dossier web correspondant.
 
-Some features are not yet implemented but are planned for future updates:
+## Réponses automatiques (optionnel)
 
-- **A proper authentication system**.
-- **Real-time chat with other users (non-AI)**.
-- **Advanced settings**: More customizable options.
-- **Text style customization**: Change font color, size, and type in chat.
-- **Customized background for the chat**.
-- **Audio and video calls**.
-- **Mobile-responsive version**.
+`src/utils/openai.js` peut faire répondre un contact par l’API OpenAI via `VITE_OPENAI_API_KEY`. Attention : toute variable `VITE_*` est incluse dans le JavaScript envoyé au navigateur. N’utilisez pas de clé de production côté front ; passez plutôt par votre backend.
 
----
+## À savoir
 
-## Acknowledgments
+Les appels audio/vidéo, les transferts de fichiers et les jeux sont affichés pour restituer l’interface d’époque, mais restent volontairement désactivés. Les messages sont récupérés par polling (pas de WebSocket).
 
-- [7.css](https://github.com/khang-nd/7.css): For offering a collection of Windows 7-inspired components, which saved me a significant amount of time and effort.
+## Crédits
 
----
-
-## Contribute and Share Feedback
-
-If you’d like to contribute to the project or provide feedback, feel free to reach out. I welcome all suggestions and help to improve this nostalgic trip down memory lane!
+Projet original par [clrgia](https://github.com/clrgia/windows-live-messenger). Authentification, backend et refonte de l’interface par [filinodz](https://github.com/filinodz).

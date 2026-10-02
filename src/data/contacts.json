@@ -1,80 +1,80 @@
 [
   {
     "id": 2,
-    "name": "Clara (l)",
-    "email": "clara2@hotmail.com",
+    "name": "Clara (L)",
+    "email": "clara2@hotmail.fr",
     "status": "online",
-    "message": "Currently working on a MSN clone app ",
+    "message": "En train de travailler sur un clone de MSN :)",
     "image": "/assets/usertiles/custom/animegirl.png",
     "isFavorite": 1
   },
   {
     "id": 3,
     "name": "Jack...",
-    "email": "jack3@hotmail.com",
+    "email": "jack3@hotmail.fr",
     "status": "busy",
-    "message": "(b)(d)(d)(b)(d)(b)(b)...+o(",
+    "message": "(B)(D)(D)(B)... +o(",
     "image": "/assets/usertiles/winter.gif",
     "isFavorite": 0
   },
   {
     "id": 4,
     "name": "★·.·´¯`·.·★ JENNY ★·.·´¯`·.·★",
-    "email": "jenny4@hotmail.com",
+    "email": "jenny4@hotmail.fr",
     "status": "away",
-    "message": "Love is the flower you've got to let grow (r)",
+    "message": "L'amour est une fleur qu'il faut laisser pousser (R)",
     "image": "/assets/usertiles/daisy.png",
     "isFavorite": 0
   },
   {
     "id": 5,
     "name": "Anne ♥",
-    "email": "anne5@hotmail.com",
+    "email": "anne5@hotmail.fr",
     "status": "offline",
-    "message": "Loving you makes life worth it",
+    "message": "Aimer donne un sens à la vie (L)",
     "image": "/assets/usertiles/doctor.png",
     "isFavorite": 0
   },
   {
     "id": 6,
     "name": "(( (#) Kassandra",
-    "email": "kassandra6@hotmail.com",
+    "email": "kassandra6@hotmail.fr",
     "status": "offline",
-    "message": "(l) I luv u 4 ever (l)",
+    "message": "(L) je t'aime pour toujours (L)",
     "image": "/assets/usertiles/gerber_daisy.png",
     "isFavorite": 0
   },
   {
     "id": 7,
     "name": "Graham",
-    "email": "graham7@hotmail.com",
+    "email": "graham7@hotmail.fr",
     "status": "offline",
-    "message": "i need a new job :/",
+    "message": "Il me faut un nouveau boulot :/",
     "image": "/assets/usertiles/dog.png",
     "isFavorite": 0
   },
   {
     "id": 8,
-    "name": "(k) ✦.Laurence..✦",
-    "email": "laurence8@hotmail.com",
+    "name": "(K) ✦ Laurence ✦",
+    "email": "laurence8@hotmail.fr",
     "status": "offline",
-    "message": "(h)Let's go les Habs!!!!!!(h)",
+    "message": "Ce soir on sort !!! (H)",
     "image": "/assets/usertiles/sports.png",
     "isFavorite": 0
   },
   {
     "id": 9,
     "name": "(*) GUILLAUME (*)",
-    "email": "guillaume9@hotmail.com",
+    "email": "guillaume9@hotmail.fr",
     "status": "online",
-    "message": "Playing Assassin's Creed (y)",
+    "message": "En train de jouer à Assassin's Creed (Y)",
     "image": "/assets/usertiles/fall.gif",
     "isFavorite": 0
   },
   {
     "id": 10,
-    "name": "(6) sтɘpн ×",
-    "email": "stepn10@hotmail.com",
+    "name": "(6) stéph ×",
+    "email": "steph10@hotmail.fr",
     "status": "online",
     "message": "☼  ☽",
     "image": "/assets/usertiles/summer.gif",
@@ -83,25 +83,25 @@
   {
     "id": 11,
     "name": "Lucas",
-    "email": "lucas89000@hotmail.com",
+    "email": "lucas89000@hotmail.fr",
     "status": "online",
-    "message": "I see through the lies of the Jedi. I do not fear the dark side as you do.",
+    "message": "Je vois clair dans les mensonges des Jedi.",
     "image": "/assets/usertiles/custom/anakin.png",
     "isFavorite": 0
   },
   {
     "id": 12,
     "name": "Michael",
-    "email": "michael13@hotmail.com",
+    "email": "michael13@hotmail.fr",
     "status": "online",
-    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ (8)",
+    "message": "Ma nouvelle vidéo préférée (8)",
     "image": "/assets/usertiles/custom/olimar.png",
     "isFavorite": 0
   },
   {
     "id": 13,
     "name": "Olivia F.",
-    "email": "olivia12@hotmail.com",
+    "email": "olivia12@hotmail.fr",
     "status": "online",
     "message": "",
     "image": "/assets/usertiles/custom/person1.png",
@@ -109,17 +109,17 @@
   },
   {
     "id": 14,
-    "name": "▀▄▀▄▀▄ 『 Riamu 』 ▄▀▄▀▄▀",
-    "email": "liam15evans@hotmail.com",
+    "name": "▀▄▀▄ 『 Riamu 』 ▄▀▄▀",
+    "email": "riamu15@hotmail.fr",
     "status": "online",
-    "message": "We came, we saw, we drank beer",
+    "message": "On est venus, on a vu, on a bu un verre (B)",
     "image": "/assets/usertiles/custom/vash.png",
     "isFavorite": 0
   },
   {
     "id": 15,
     "name": "Ethan",
-    "email": "ethan15@hotmail.com",
+    "email": "ethan15@hotmail.fr",
     "status": "online",
     "message": "",
     "image": "/assets/usertiles/custom/person2.png",
@@ -128,27 +128,27 @@
   {
     "id": 16,
     "name": ".Emma ♡.",
-    "email": "emma16@hotmail.com",
+    "email": "emma16@hotmail.fr",
     "status": "online",
-    "message": "Love is like maths... Its soooo COMPLICATED! (u) ㄟ(≧◇≦)ㄏ",
+    "message": "L'amour, c'est comme les maths... trop compliqué ! (U)",
     "image": "/assets/usertiles/custom/linkzelda.png",
     "isFavorite": 0
   },
   {
     "id": 17,
     "name": "✿ Sophia ❀",
-    "email": "sophia.l@hotmail.com",
+    "email": "sophia.l@hotmail.fr",
     "status": "online",
-    "message": ":-# Lies run sprints, but the truth runs marathons.",
+    "message": "Le mensonge sprinte, mais la vérité court un marathon.",
     "image": "/assets/usertiles/custom/michaeljackson.png",
     "isFavorite": 0
   },
   {
     "id": 18,
-    "name": "––––•(-• śåŘαҢ •-)•––––",
-    "email": "xxsaraaahxx@hotmail.com",
+    "name": "––––•(-• SARA •-)•––––",
+    "email": "xxsaraaahxx@hotmail.fr",
     "status": "online",
-    "message": "I Don't Like The Drugs, But The Drugs Like Me (l) :[",
+    "message": "La musique est ma meilleure amie (L)",
     "image": "/assets/usertiles/custom/emogirl.gif",
     "isFavorite": 0
   }

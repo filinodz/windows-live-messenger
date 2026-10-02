@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import defaultAvatar from '/assets/usertiles/default.png';
 import statusFrames from '../imports/statusFrames';
+import { assetUrl } from '../utils/assets';
 
 const AvatarSmall = () => {
-  const discordId = localStorage.getItem('discord_id');
-
   const [user, setUser] = useState({
     status: localStorage.getItem('status') || 'Available',
-    picture: localStorage.getItem('picture') || (discordId ? `https://api.t3d.uk/discord/avatar/${discordId}` : defaultAvatar),
+    picture: localStorage.getItem('picture') || defaultAvatar,
   });
 
   const [userStatus, setUserStatus] = useState(statusFrames.OnlineSmall);
@@ -15,8 +14,7 @@ const AvatarSmall = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const newStatus = localStorage.getItem('status') || 'Available';
-      const newPicture =
-        localStorage.getItem('picture') || (discordId ? `https://api.t3d.uk/discord/avatar/${discordId}` : defaultAvatar);
+      const newPicture = localStorage.getItem('picture') || defaultAvatar;
 
       setUser((prevUser) => {
         if (prevUser.status !== newStatus || prevUser.picture !== newPicture) {
@@ -27,7 +25,7 @@ const AvatarSmall = () => {
     }, 500);
 
     return () => clearInterval(interval);
-  }, [discordId]);
+  }, []);
 
   useEffect(() => {
     switch (user.status) {
@@ -51,8 +49,8 @@ const AvatarSmall = () => {
 
   return (
     <div className="h-[80px] w-[80px] relative">
-      <img className="absolute m-[7px] rounded-sm w-[52px]" src={user.picture} alt="Avatar" />
-      <img className="absolute w-full h-full bottom-2 right-2" src={userStatus} alt="Status Frame" />
+      <img className="absolute m-[7px] rounded-sm w-[52px]" src={assetUrl(user.picture)} alt="Image perso" />
+      <img className="absolute w-full h-full bottom-2 right-2" src={userStatus} alt="Cadre de statut" />
     </div>
   );
 };

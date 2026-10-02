@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import defaultAvatar from '/assets/usertiles/default.png';
 import statusFrames from '../imports/statusFrames';
+import { assetUrl } from '../utils/assets';
 
 const AvatarLarge = ({ image, status }) => {
   const [userStatus, setUserStatus] = useState(statusFrames.OnlineSmall);
@@ -50,14 +51,12 @@ const AvatarLarge = ({ image, status }) => {
     }
   }, [loggedin, status]);
 
-  const discordId = localStorage.getItem('discord_id');
-
-  const avatarUrl = image || (discordId ? `https://api.t3d.uk/discord/avatar/${discordId}` : defaultAvatar);
+  const avatarUrl = assetUrl(image || defaultAvatar);
 
   return (
     <div className="h-28 w-28">
-      <img className="absolute ml-[9px] mt-[8px] w-24 rounded-sm" src={avatarUrl} alt="Avatar" />
-      <img className="absolute ml-[-10px] mt-[-7px]" src={status ? contactStatus : userStatus} alt="Frame" />
+      <img className="absolute ml-[9px] mt-[8px] w-24 rounded-sm" src={avatarUrl} alt="Image perso" />
+      <img className="absolute ml-[-10px] mt-[-7px]" src={status ? contactStatus : userStatus} alt="Cadre de statut" />
     </div>
   );
 };

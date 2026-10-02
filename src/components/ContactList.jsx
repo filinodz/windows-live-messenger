@@ -10,7 +10,7 @@ import { replaceEmoticons } from '../helpers/replaceEmoticons';
 
 import { useNavigate } from 'react-router-dom';
 
-const ContactCategory = ({ title, contacts, count }) => {
+const ContactCategory = ({ title, contacts, count, favorite = false }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleAccordion = () => {
@@ -21,7 +21,7 @@ const ContactCategory = ({ title, contacts, count }) => {
     <div className="mt-2">
       <div className="flex items-center cursor-pointer ml-1 hovercontact border border-transparent" onClick={toggleAccordion}>
         <h2>{isOpen ? <img src={closedTabArrow} alt="close tab" /> : <img src={openTabArrow} alt="open tab" />}</h2>
-        {title === 'Favorites' && <img src={favoritesIcon} className="mr-1" alt="favorites icon" />}
+        {favorite && <img src={favoritesIcon} className="mr-1" alt="Favoris" />}
         <p className="text-[#1D2F7F] mr-1">{title}</p>
         <p className="opacity-40">({count})</p>
       </div>

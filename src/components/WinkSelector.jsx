@@ -56,10 +56,10 @@ const WinkSelector = () => {
       <div className="relative" ref={dropdownRef}>
         <div className="flex items-center aerobutton p-1 h-6" onClick={() => setIsOpen(!isOpen)}>
           <div className="w-5">
-            <img src={selectWink} alt="Select Wink" />
+            <img src={selectWink} alt="Choisir un clin d’œil" />
           </div>
           <div>
-            <img src={arrow} alt="Dropdown Arrow" />
+            <img src={arrow} alt="Ouvrir le menu" />
           </div>
         </div>
 
@@ -67,11 +67,11 @@ const WinkSelector = () => {
         {isOpen && (
           <div className="absolute w-[384px] h-auto bottom-[19px] left-[-9px] m-2 bg-white border border-gray-300 p-1">
             <div className="w-full border-b pb-1 flex justify-between">
-              <p className="font-bold">Your winks</p>
-              <p className="link">Show all...</p>
+              <p className="font-bold">Vos clins d’œil</p>
+              <p className="link">Tout afficher...</p>
             </div>
             <div>
-              <p className="my-1 opacity-75">Recently used winks</p>
+              <p className="my-1 opacity-75">Clins d’œil récemment utilisés</p>
               <div className="w-full border-b flex justify-center gap-1.5 pb-0.5">
                 {displayRecentWinks.map((alias, index) => (
                   <div
@@ -83,7 +83,7 @@ const WinkSelector = () => {
                   </div>
                 ))}
               </div>
-              <p className="my-1 opacity-75">Pinned winks</p>
+              <p className="my-1 opacity-75">Clins d’œil favoris</p>
             </div>
             <div className="flex flex-wrap gap-1 mb-2">
               {Object.keys(winks).map((alias) => (

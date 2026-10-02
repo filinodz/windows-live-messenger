@@ -230,3 +230,8 @@ node_modules/@babel/helpers/lib/helpers/asyncIterator.js.map
 node_modules/@babel/helpers/lib/helpers/awaitAsyncGenerator.js
 node_modules/@babel/helpers/lib/helpers/awaitAsyncGenerator.js.map
 node_modules/@babel/helpers/lib/helpers/OverloadYield.js.map
+
+# Build et archives de déploiement
+dist/
+*.zip
+.env.local
